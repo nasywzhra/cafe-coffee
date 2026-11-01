@@ -37,10 +37,10 @@
 .foto-bingkai img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .stiker { position: absolute; height: auto; filter: drop-shadow(0 4px 6px rgba(55, 68, 31, 0.25)); }
-.stiker-bunga  { top: -14%; left: -10%;  width: 20%; }
-.stiker-kantong { top: -16%; right: -9%; width: 22%; transform: rotate(8deg); }
-.stiker-menu   { bottom: -16%; left: -12%; width: 24%; transform: rotate(-6deg); }
-.stiker-kamera { bottom: -12%; right: -10%; width: 28%; }
+.stiker-bunga   { top: -14%; left: -10%;  width: 20%; }
+.stiker-kantong { top: -16%; right: -9%;  width: 22%; transform: rotate(8deg); }
+.stiker-menu    { bottom: -16%; left: -12%; width: 24%; transform: rotate(-6deg); }
+.stiker-kamera  { bottom: -12%; right: -10%; width: 28%; }
 
 .tagline {
   font-family: "Great Vibes", cursive;
@@ -63,7 +63,7 @@
 .ringkasan strong { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; }
 .ringkasan span { font-size: 0.9rem; }
 
-/* ---------- Form + daftar ---------- */
+/* ---------- Form + daftar cafe ---------- */
 .konten { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: start; }
 
 .form {
@@ -147,6 +147,99 @@
   border-radius: 10px;
 }
 
+/* ---------- Teman Ngafe (data dari API) ---------- */
+.teman { margin-top: 4rem; }
+.teman-judul { text-align: center; margin-bottom: 1.75rem; }
+.teman-judul h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+}
+.teman-judul p { font-family: "Great Vibes", cursive; font-size: 1.6rem; }
+
+.daftar-teman {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.kartu-teman {
+  position: relative;
+  background: var(--kertas);
+  border-radius: 12px;
+  padding: 2rem 1.25rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+.kartu-teman::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 10px;
+  background: repeating-linear-gradient(90deg, var(--zaitun) 0 14px, var(--kertas) 14px 28px);
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 0.9rem;
+  border-radius: 50%;
+  background: var(--mawar);
+  color: var(--zaitun);
+  display: grid;
+  place-items: center;
+}
+
+.kartu-teman h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.teman-info { font-size: 0.85rem; color: #6f5559; margin-top: 0.2rem; }
+.teman-pesan {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  margin: 0.9rem 0 0.8rem;
+}
+.teman-email { font-size: 0.8rem; color: #6f5559; overflow-wrap: anywhere; }
+
+/* ---------- Status loading / error ---------- */
+.status-box {
+  text-align: center;
+  padding: 2rem;
+  border: 2px dashed var(--zaitun);
+  border-radius: 10px;
+}
+.status-box button {
+  font: inherit;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.6rem 1.6rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--zaitun);
+  color: var(--muda);
+  cursor: pointer;
+}
+.status-box button:hover { background: var(--mawar); color: var(--zaitun); }
+.status-box button:focus-visible { outline: 3px solid var(--mawar); outline-offset: 2px; }
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 0.75rem;
+  border: 4px solid var(--mawar);
+  border-top-color: var(--zaitun);
+  border-radius: 50%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .spinner { animation: putar 0.9s linear infinite; }
+}
+@keyframes putar { to { transform: rotate(360deg); } }
+
 /* ---------- Footer ---------- */
 .footer p {
   background: var(--zaitun);
@@ -157,8 +250,15 @@
   font-size: 1.6rem;
 }
 
+/* ---------- Responsif ---------- */
+@media (max-width: 900px) {
+  .daftar-teman { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 760px) {
   .konten { grid-template-columns: 1fr; }
   .tenda { height: 40px; }
   .hero { padding-top: 2.5rem; }
+}
+@media (max-width: 560px) {
+  .daftar-teman { grid-template-columns: 1fr; }
 }

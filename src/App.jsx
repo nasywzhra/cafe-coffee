@@ -4,14 +4,15 @@ import Hero from "./components/Hero";
 import RingkasanCafe from "./components/RingkasanCafe";
 import FormCafe from "./components/FormCafe";
 import DaftarCafe from "./components/DaftarCafe";
+import TemanNgafe from "./components/TemanNgafe";
 import "./App.css";
 
 const dataAwal = [
-  { id: 1, nama: "Kopi Cantel Braga ", area: "Braga", menuAndalan: "Kopi Susu OG / Kopi Susu Cantel", rating: 4.5 },
-  { id: 2, nama: "Lapinea Cafe", area: "Lembang", menuAndalan: "aneka pastry & kopi yang enak", rating: 4 },
-  { id: 3, nama: "ManA Social Cafe", area: "Buah Batu", menuAndalan: "Butterscotch Latte", rating: 4.5 },
-  { id: 4, nama: "Jabarano Coffee", area: "Braga", menuAndalan: "Chocolate Signature & Dirty Latte", rating: 4 },
-  { id: 5, nama: "Up’s Coffee & Eatery", area: "Batununggal", menuAndalan: "Affogato coffee dengan view city light yang cantik", rating: 4.5 },
+  { id: 1, nama: "Kopi Toko Djawa", area: "Braga", menuAndalan: "Es kopi susu gula aren", rating: 4.5 },
+  { id: 2, nama: "Warung Kopi Purnama", area: "Braga", menuAndalan: "Kopi tubruk dan roti bakar", rating: 4 },
+  { id: 3, nama: "Noah's Barn", area: "Dago", menuAndalan: "Affogato", rating: 4.5 },
+  { id: 4, nama: "Lawangwangi Creative Space", area: "Dago", menuAndalan: "Cappuccino dengan pemandangan kota", rating: 4 },
+  { id: 5, nama: "Kopi Lembang Pagi", area: "Lembang", menuAndalan: "Cokelat panas dan pisang goreng", rating: 3.5 },
 ];
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <FormCafe onTambah={tambahCafe} />
           <DaftarCafe daftarCafe={daftarCafe} />
         </div>
+        <TemanNgafe />
       </main>
       <footer className="footer">
         <div className="tenda" aria-hidden="true" />
