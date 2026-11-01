@@ -1,184 +1,164 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+/* ---------- Header + tenda bergaris ---------- */
+.header-isi {
+  background: var(--zaitun);
+  text-align: center;
+  padding: 0.9rem 1rem 1.3rem;
+}
+.rekomendasi {
+  display: block;
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--muda);
+}
+.header h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 8vw, 4.2rem);
+  line-height: 1;
+  color: var(--muda);
+}
+.tenda {
+  height: 54px;
+  background: repeating-linear-gradient(90deg, var(--zaitun) 0 22px, transparent 22px 66px);
 }
 
-.hero {
-  position: relative;
+/* ---------- Hero kolase ---------- */
+.app { max-width: 1000px; margin: 0 auto; padding: 0 1.25rem 3.5rem; }
 
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
+.hero { text-align: center; padding: 3.5rem 0 1.5rem; }
 
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
+.kolase { position: relative; width: min(80%, 560px); margin: 0 auto 3rem; }
+.foto-bingkai {
+  aspect-ratio: 3 / 2;
+  background: var(--mawar);
+  overflow: hidden;
+}
+.foto-bingkai img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  .framework,
-  .vite {
-    position: absolute;
-  }
+.stiker { position: absolute; height: auto; filter: drop-shadow(0 4px 6px rgba(55, 68, 31, 0.25)); }
+.stiker-bunga  { top: -14%; left: -10%;  width: 20%; }
+.stiker-kantong { top: -16%; right: -9%; width: 22%; transform: rotate(8deg); }
+.stiker-menu   { bottom: -16%; left: -12%; width: 24%; transform: rotate(-6deg); }
+.stiker-kamera { bottom: -12%; right: -10%; width: 28%; }
 
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+.tagline {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(1.4rem, 3.8vw, 2.2rem);
+  line-height: 1.55;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
-#center {
+/* ---------- Ringkasan ---------- */
+.ringkasan { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 2.5rem 0; }
+.ringkasan div {
+  background: var(--mawar);
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.ringkasan strong { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; }
+.ringkasan span { font-size: 0.9rem; }
+
+/* ---------- Form + daftar ---------- */
+.konten { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: start; }
+
+.form {
+  background: var(--zaitun);
+  color: var(--muda);
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  gap: 1rem;
 }
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+.form h2 { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; font-weight: 600; }
+.form label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; font-weight: 500; }
+.form input, .form select {
+  font: inherit;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: var(--kertas);
+  color: var(--zaitun);
 }
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.form input:focus-visible, .form select:focus-visible, .form button:focus-visible {
+  outline: 3px solid var(--mawar);
+  outline-offset: 2px;
 }
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+.form button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--mawar);
+  color: var(--zaitun);
+  cursor: pointer;
 }
+.form button:hover { background: var(--muda); }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
+.daftar { display: grid; gap: 1rem; }
 
-.ticks {
+.kartu {
   position: relative;
-  width: 100%;
+  background: var(--kertas);
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem 1.1rem 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+.kartu::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 14px;
+  background: repeating-linear-gradient(180deg, var(--zaitun) 0 10px, var(--kertas) 10px 20px);
+}
+.kartu h3 { font-family: "Cormorant Garamond", serif; font-size: 1.6rem; font-weight: 700; line-height: 1.15; }
+.kartu .area { font-size: 0.9rem; color: #6f5559; margin: 0.2rem 0 0.5rem; }
+.kartu .menu em { font-style: normal; font-weight: 600; }
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+.stempel {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--zaitun);
+  color: var(--muda);
+  border: 3px double var(--mawar);
+  display: grid;
+  place-items: center;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  transform: rotate(-8deg);
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+.kosong {
+  padding: 2rem;
+  text-align: center;
+  border: 2px dashed var(--zaitun);
+  border-radius: 10px;
+}
+
+/* ---------- Footer ---------- */
+.footer p {
+  background: var(--zaitun);
+  color: var(--muda);
+  text-align: center;
+  padding: 1.2rem 1rem 1.6rem;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 760px) {
+  .konten { grid-template-columns: 1fr; }
+  .tenda { height: 40px; }
+  .hero { padding-top: 2.5rem; }
 }
